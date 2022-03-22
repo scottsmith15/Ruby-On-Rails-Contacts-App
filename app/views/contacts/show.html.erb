@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<style type="text/css">
+    .jumbotron {
+      padding: 4rem 2rem;
+      margin-bottom: 2rem;
+      background-color: var(--bs-light);
+      border-radius: .3rem;  
+    }
+</style>
+
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @contact.first_name %>
+    <%= @contact.last_name %>
+  </h1>
+  <p class="lead">
+    <%= @contact.email %>  |  
+    <%= @contact.phone %>  |  
+    <%= @contact.twitter %>
+  </p>
+  <%= link_to "Edit", edit_contact_path(@contact), class:"btn btn-secondary" %>
+  <%= link_to "Back", contacts_path, class:"btn btn-dark" %>
+  <br/>
+  <br/>
+  <%= button_to "Destroy", @contact, method: :delete, class:"btn btn-danger" %>
+</div>
